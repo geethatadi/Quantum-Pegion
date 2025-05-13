@@ -8,9 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let landingPageVC = LandingPageViewController()
+        let profileVC = ProfileViewController()
         
-        let navigationController = UINavigationController(rootViewController: landingPageVC)
+        // Use navigation controller to manage view stack
+        let navigationController = UINavigationController(rootViewController: profileVC)
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
