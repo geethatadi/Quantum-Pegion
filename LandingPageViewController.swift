@@ -58,8 +58,11 @@ class LandingPageViewController: UIViewController {
     private func bindViewModel() {
         viewModel = LandingPageViewModel()
     }
-    
-    @objc private func didTapProceed() {
-        viewModel.navigateToNextScreen()
-    }
+    func navigateToFeedScreen() {
+    coordinator?.goToFeedScreen()
+}
+
+  @objc private func didTapProceed() {
+    viewModel.navigateToFeedScreen()
+}
 }
