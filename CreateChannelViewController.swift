@@ -22,7 +22,6 @@ class CreateChannelViewController: UIViewController, UIImagePickerControllerDele
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
         navigationItem.leftBarButtonItem?.tintColor = .white
         
-        // Image Picker
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.crop.circle")
         imageView.tintColor = .white
@@ -115,7 +114,13 @@ class CreateChannelViewController: UIViewController, UIImagePickerControllerDele
             }
         }
     }
-
+extension UITextField {
+    func setLeftPaddingPoints(_ amount: CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+}
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[.originalImage] as? UIImage {
             imageView.image = img
